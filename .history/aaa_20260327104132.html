@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>MathJax Error Handling</title>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            extensions: [ "tex2jax.js" ],
+            showProcessingMessages: false,
+            showMathMenu: false,
+            messageStyle: "none",
+            jax: [ "input/TeX","output/HTML-CSS" ],
+            TeX: {
+                extensions: [ "mhchem.js","extpfeil.js",'enclose.js' ],
+                Macros: {
+                  square: ["\\unicode{x25A1}"]  // 直接使用 Unicode 方块符号
+                }
+            },
+            tex2jax: {inlineMath: [ [ "$","$" ],[ "\\(","\\)" ] ]},
+
+            "HTML-CSS": {
+                linebreaks: { automatic: true, width: 'container'},
+                scale: 100,
+                minScaleAdjust: 50
+            },
+
+            styles:{
+                ".MathJax span.msqrt span.mn":{
+                "font-size":"85% !important"
+            },
+            ".MathJax nobr > .math > span":{
+                "font-size": "100% !important"
+            }
+            }
+        });
+    </script>
+    <script src="https://lftresource.daoxuehao.com/cdn/lib/MathJax/MathJax-2.7.0/MathJax.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js"></script> -->
+</head>
+
+<body>
+
+    <h2>二维码测试</h2>
+    <div style="display: flex;">
+        <div><p>文字</p>
+            <img src="http://dxh-lamp-cdn.daoxuehao.com/test/qrcode-text.png"></div>
+        <div><p>链接</p>
+            <img src="http://dxh-lamp-cdn.daoxuehao.com/test/qrcode-url.png"></div>
+    </div>
+ 
+    <div>
+        <p>如图，四棱锥S-ABCD的底面是菱形，SD&perp;平面 ABCD，AB=BD=2，SD=$\sqrt{3}$.</p><p>（1）求证：AC&perp;平面SBD；</p><p><img
+                src="https://oss.daoxuehao.com/dxhquestimgs/AiQuest/images/2025/10/27/bfc62f2b-2d19-4d85-92db-b3a3f6d175e8.png"
+                style="height:222px; width:252px" /></p>\n\n<p>(2) 求平面 SBD 与平面 SBC 夹角的余弦值.</p>
+    </div>
+ 
+    ---
+    <p>这是一个测试公式：\(x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}\)</p>
+
+    <div>
+        <h2>公式符号兼容性测试</h2>
+        <ol>
+            <li>希腊字母与上下标：<br>\( \alpha, \beta, \gamma, \delta, \epsilon, \theta, \lambda, \mu, \pi, \rho, \sigma, \omega
+                \)，<br>\( a_i^2, \quad x_{n+1} \)</li>
+            <li>基本运算与结构：<br>\( \frac{a+b}{c+d}, \quad \sqrt{x^2 + y^2}, \quad x^{1/3}, \quad \left( \frac{a}{b}
+                \right)^n \)</li>
+            <li>极限、导数与积分：<br>\( \lim_{x \to 0} \frac{\sin x}{x}, \quad \frac{dy}{dx}, \quad \int_a^b x^2 \, dx, \quad
+                \nabla \cdot \vec{E} \)</li>
+            <li>向量与矩阵：<br>\( \vec{v}, \quad \mathbf{F} = m \vec{a}, \quad \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix}
+                \)</li>
+            <li>逻辑符号：<br>\( \forall x \in \mathbb{R},\ \exists y \in \mathbb{R},\ x < y \)<br>\( \neg P \Rightarrow Q,
+                    \quad P \land Q, \quad P \lor Q \)</li>
+            <li>集合与关系：<br>\( A \cup B, \quad A \cap B, \quad A \subseteq B, \quad \emptyset, \quad \in, \notin \)</li>
+            <li>特殊函数：<br>\( \sin x, \cos x, \tan x, \ln x, \log_{10} x, \exp(x), \max(a,b), \min(a,b) \)</li>
+            <li>化学公式（mhchem）：<br>\( \ce{H2O}, \quad \ce{CO2 + C -> 2CO}, \quad \ce{Na^+ + Cl^- -> NaCl} \)</li>
+            <li>单位符号：<br>\( 5\,\mathrm{m}, \quad 10\,\mathrm{kg}, \quad 3.2\,\mathrm{m/s^2}, \quad \mathrm{N}, \quad
+                \mathrm{J}, \quad \mathrm{mol/L} \)</li>
+            <li>电学与磁学：<br>\( V = IR, \quad F = qE, \quad B = \mu_0 H, \quad \varepsilon = -\frac{d\Phi}{dt} \)</li>
+            <li>边界与矢量操作：<br>\( \nabla f, \quad \nabla \cdot \vec{A}, \quad \nabla \times \vec{B}, \quad \oint_C \vec{F}
+                \cdot d\vec{r} \)</li>
+            <li>大括号与分段函数：<br>\( f(x) = \begin{cases} x^2, & x \ge 0 \\ -x, & x < 0 \end{cases} \)</li>
+            <li>箭头与映射符号：<br>\( A \to B, \quad A \Rightarrow B, \quad f: A \mapsto B \)</li>
+            <li>其他符号：<br>\( \infty, \quad \pm, \quad \approx, \quad \equiv, \quad \propto, \quad \because, \quad
+                \therefore \)</li>
+        </ol>
+    </div>
+
+
+
+    <audio controls>
+        <!-- .aac文件 -->
+        <source
+            src="https://dxh-lamp.oss-cn-qingdao.aliyuncs.com/lamp2/feedback/voice/0f8327ca746d4fb3ba8e87074c14dbcc.aac"
+            type="audio/aac">
+
+        您的浏览器不支持HTML5音频
+    </audio>
+    ======================================================
+
+
+</body>
+
+</html>

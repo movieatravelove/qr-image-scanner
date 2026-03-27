@@ -1,0 +1,11 @@
+{
+  "manifest_version": 3,
+  "name": "QR二维码识别",
+  "version": "1.0.0",
+  "description": "右键识别图片中的二维码",
+  "permissions": ["contextMenus", "scripting"],
+  "host_permissions": ["<all_urls>", "*://*/*", "file:///*"],
+  "background": {
+    "service_worker": "background.js"
+  }
+}
